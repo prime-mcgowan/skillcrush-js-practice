@@ -42,5 +42,53 @@ Your share is $${(total / numOfPeople).toFixed(2)}. Hope it was delicious!`);
 
 // prompt use example: let moneyRaised = Number(prompt("How much money did we raise?"));
 
-let mealCostQeustion = Number(prompt("Cost of meal (ex. 25.99)"));
-console.log(mealCostQeustion);
+// let mealCostQustion = Number(prompt("Cost of meal (ex. 25.99)"));
+// console.log(mealCostQuestion);
+
+// * Practice ************************************************************
+// let favoriteColor = prompt("What is your favorite color?");
+// console.log(`Your favorite color is ${favoriteColor}.`);
+
+// let yourName = prompt("What is your name?");
+// let birthYear = prompt("What year were you born?");
+// let age = 2024 - birthYear;
+
+// console.log(`${yourName} is ${age} years old.`);
+
+// let hourlyWage = prompt("What is your hourly wage?");
+// let hoursWorked = prompt("How many hours do you work in a week?");
+// let weeklyWages = hourlyWage * hoursWorked;
+
+// console.log(`You make $${weeklyWages} a week.`);
+
+// * Conditional Statements ************************************************************
+// alert("Take a look outside and check the weather");
+
+// let hotWeather = false;
+// let snowyWeather = false;
+// let windyWeather = true;
+
+// if (hotWeather === true) {
+//   console.log("Wearin' shorts today!!");
+// } else if (snowyWeather === true) {
+//   console.log("It's a hats and gloves kinda day.");
+// } else {
+//   console.log("Probably gonna wanna sweater...it's windy.");
+// }
+
+// let weekday = new Date().toLocaleString("en-US", { weekday: "long" });
+let weekday = "Friday";
+
+if (weekday === "Monday") {
+  console.log("Let's get this week started!!");
+} else if (weekday === "Tuesday") {
+  console.log("Working at ED Williams");
+} else if (weekday === "Wednesday") {
+  console.log("Midweek, baby!!");
+} else if (weekday === "Thursday") {
+  console.log("Almost there!!");
+} else if (weekday === "Friday") {
+  console.log("It's Fri-YAY!!!!");
+} else {
+  console.log("The weekend is HERE!!");
+}
