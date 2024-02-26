@@ -76,6 +76,7 @@ Your share is $${(total / numOfPeople).toFixed(2)}. Hope it was delicious!`);
 //   console.log("Probably gonna wanna sweater...it's windy.");
 // }
 
+// * What day is it? Conditional Statements ************************************************************
 // let weekday = new Date().toLocaleString("en-US", { weekday: "long" });
 let weekday = "Friday";
 
@@ -92,3 +93,22 @@ if (weekday === "Monday") {
 } else {
   console.log("The weekend is HERE!!");
 }
+
+// * What time is it? Conditional Statements ************************************************************
+// let time = new Date().getHours();
+let time = 22;
+
+let greeting = "Hi";
+firstName = "Laura";
+
+if (time < 12) {
+  console.log("Good morning");
+} else if (time <= 18) {
+  console.log("Good afternoon");
+} else if (time <= 22) {
+  console.log("Good evening");
+} else {
+  console.log("Good night");
+}
+
+// alert(`${greeting}, ${firstName}`);
