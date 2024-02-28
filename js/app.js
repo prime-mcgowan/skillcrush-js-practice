@@ -154,3 +154,35 @@ console.log(body);
 
 body = document.querySelector("body");
 body.style.backgroundColor = "#FEF2F1";
+
+// * Manipulating the DOM ************************************************************
+let firstListItem = document.querySelector("ul li");
+// console.log(firstListItem);
+
+firstListItem = document.querySelector("ul li");
+firstListItem.style.textTransform = "uppercase";
+console.log(firstListItem);
+
+let moreReasons = document.querySelector(".more-reasons");
+console.log(moreReasons.outerHTML);
+
+moreReasons.style.fontSize = "2.5em";
+console.log(moreReasons);
+
+let whyJS = document.querySelector("h3");
+console.log(whyJS);
+
+whyJS.innerHTML = 'Why learn <span class="highlight">JavaScript</span>?';
+console.log(whyJS);
+
+let highlight = document.querySelector(".highlight");
+highlight.style.backgroundColor = "#ffFf82";
+
+let mainImage = document.querySelector("img");
+console.log(mainImage);
+
+mainImage.src = "img/new-js-logo.jpeg";
+console.log(mainImage);
+
+mainImage.alt = "new js logo";
+console.log(mainImage);
