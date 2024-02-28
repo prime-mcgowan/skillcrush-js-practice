@@ -112,3 +112,32 @@ if (time < 12) {
 }
 
 // alert(`${greeting}, ${firstName}`);
+
+// * Selecting and Modifying with querySelector ************************************************************
+let available = document.querySelector("h3");
+console.log(available);
+
+let mainTitle = document.querySelector(".main-title");
+console.log(mainTitle);
+
+let firstItem = document.querySelector("ul li");
+console.log(firstItem);
+
+let intro = document.querySelector(".intro p");
+console.log(intro);
+
+intro = document.querySelector(".intro p");
+intro.style.color = "purple";
+console.log(intro);
+
+intro.style.fontSize = "3em";
+intro.style.fontStyle = "italic";
+
+// !innerText and innerHtml
+let firstCaption = document.querySelector("figcaption");
+firstCaption.innerText = "The LaLa";
+console.log(firstCaption);
+
+firstCaption = document.querySelector("figcaption");
+firstCaption.innerHTML = "The <strong>LaLa</strong>";
+console.log(firstCaption);
