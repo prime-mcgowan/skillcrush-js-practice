@@ -37,47 +37,80 @@
 
   <body>
     <!-- Add your site or application content here -->
-    <main class="main-content">
-      <h1>JavaScript, our Magical Friend ✨</h1>
-      <figure class="js-image">
-        <img src="img/js-logo.png" alt="JavaScript Logo" />
-      </figure>
-      <div class="intro">
-        <h3>Why learn JavaScript?</h3>
-
-        <p>
-          Ever wonder what makes JavaScript so interesting? Or why it is in such
-          high demand?
-        </p>
+    <header>
+      <div class="top-nav">
+        <div class="content-wrapper">
+          <p class="fresh">
+            Fresh <span class="fancy">&amp;</span> locally grown
+          </p>
+          <nav>
+            <ul>
+              <li>Today's Specials</li>
+              <li>Contact Us</li>
+            </ul>
+          </nav>
+        </div>
       </div>
-      <div>
-        <p><b>JavaScript can help you:</b></p>
+      <div class="content-wrapper">
+        <img class="logo" src="img/rose@2x.png" alt="Flower" />
+        <h1 class="main-title">ryan's roses</h1>
+        <h2 class="tagline">Express yourself without saying a word.</h2>
+      </div>
+    </header>
+    <main class="content-wrapper">
+      <div class="intro">
+        <p>Available today</p>
+      </div>
+      <section class="gallery">
+        <figure>
+          <img src="img/clara.jpeg" alt="Flower bouquet" />
+          <figcaption>The Clara.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/joan.jpeg" alt="Flower bouquet" />
+          <figcaption>The Elizabeth.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/jonas.jpeg" alt="Flower bouquet" />
+          <figcaption>The Jonas.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/nell.jpeg" alt="Flower bouquet" />
+          <figcaption>The Nell.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/phillip.jpeg" alt="Flower bouquet" />
+          <figcaption>The Philip.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/sasha.jpeg" alt="Flower bouquet" />
+          <figcaption>The Sasha.</figcaption>
+        </figure>
+      </section>
+    </main>
+    <footer class="contact">
+      <div class="content-wrapper">
+        <h3>We're here for you every day of the week.</h3>
+        <p>Mon-Fri 9-9 | Sat-Sun 9-5</p>
+        <address>
+          +1-555-989-2339<br />
+          2746 Bloomington Ave <br />
+        </address>
         <ul>
           <li>
-            <i class="fas fa-check"></i> Build websites and web applications
+            <a href="#"><i class="fab fa-facebook"></i></a>
           </li>
-          <li><i class="fas fa-check"></i> Play audio and/or video</li>
-          <li><i class="fas fa-check"></i> Validate input forms</li>
-          <li><i class="fas fa-check"></i> Animate page elements</li>
-          <li><i class="fas fa-check"></i> React to users with events</li>
           <li>
-            <i class="fas fa-check"></i> Load new content without refreshing the
-            page
+            <a href="#"><i class="fab fa-twitter"></i></a>
           </li>
-          <li><i class="fas fa-check"></i> Autocomplete input fields</li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-mobile-alt"></i></a>
+          </li>
         </ul>
-
-        <h3 class="more-reasons">You'd like some more reasons?</h3>
-
-        <ol>
-          <li>JS has a mature ecosystem and community</li>
-          <li>JS is in very high (and increasing) demand</li>
-          <li>JS is fun!</li>
-        </ol>
       </div>
-    </main>
-    <footer>
-      <h4>🎉 So let's get to work learning JavaScript! 🎉</h4>
     </footer>
     <p>JS Practice</p>
     <script src="js/app.js" defer></script>

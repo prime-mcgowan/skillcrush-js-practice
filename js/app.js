@@ -114,24 +114,24 @@ if (time < 12) {
 // alert(`${greeting}, ${firstName}`);
 
 // * Selecting and Modifying with querySelector ************************************************************
-let available = document.querySelector("h3");
-console.log(available);
+// let available = document.querySelector("h3");
+// console.log(available);
 
-let mainTitle = document.querySelector(".main-title");
-console.log(mainTitle);
+// let mainTitle = document.querySelector(".main-title");
+// console.log(mainTitle);
 
-let firstItem = document.querySelector("ul li");
-console.log(firstItem);
+// let firstItem = document.querySelector("ul li");
+// console.log(firstItem);
 
-let intro = document.querySelector(".intro p");
-console.log(intro);
+// let intro = document.querySelector(".intro p");
+// console.log(intro);
 
-intro = document.querySelector(".intro p");
-intro.style.color = "purple";
-console.log(intro);
+// intro = document.querySelector(".intro p");
+// intro.style.color = "purple";
+// console.log(intro);
 
-intro.style.fontSize = "3em";
-intro.style.fontStyle = "italic";
+// intro.style.fontSize = "3em";
+// intro.style.fontStyle = "italic";
 
 // !innerText and innerHtml
 // let firstCaption = document.querySelector("figcaption");
@@ -143,46 +143,74 @@ intro.style.fontStyle = "italic";
 // console.log(firstCaption);
 
 // * Connecting JavaScript to HTML ************************************************************
-mainTitle = document.querySelector("h1");
-console.log(mainTitle.outerHTML);
+// mainTitle = document.querySelector("h1");
+// console.log(mainTitle.outerHTML);
 
-mainTitle = document.querySelector("h1");
-mainTitle.innerHTML = "Yay, JavaScript!!";
+// mainTitle = document.querySelector("h1");
+// mainTitle.innerHTML = "Yay, JavaScript!!";
 
-let body = document.querySelector("body");
-console.log(body);
+// let body = document.querySelector("body");
+// console.log(body);
 
-body = document.querySelector("body");
-body.style.backgroundColor = "#FEF2F1";
+// body = document.querySelector("body");
+// body.style.backgroundColor = "#FEF2F1";
 
 // * Manipulating the DOM ************************************************************
-let firstListItem = document.querySelector("ul li");
+// let firstListItem = document.querySelector("ul li");
+// // console.log(firstListItem);
+
+// firstListItem = document.querySelector("ul li");
+// firstListItem.style.textTransform = "uppercase";
 // console.log(firstListItem);
 
-firstListItem = document.querySelector("ul li");
-firstListItem.style.textTransform = "uppercase";
-console.log(firstListItem);
+// let moreReasons = document.querySelector(".more-reasons");
+// console.log(moreReasons.outerHTML);
 
-let moreReasons = document.querySelector(".more-reasons");
-console.log(moreReasons.outerHTML);
+// moreReasons.style.fontSize = "2.5em";
+// console.log(moreReasons);
 
-moreReasons.style.fontSize = "2.5em";
-console.log(moreReasons);
+// let whyJS = document.querySelector("h3");
+// console.log(whyJS);
 
-let whyJS = document.querySelector("h3");
-console.log(whyJS);
+// whyJS.innerHTML = 'Why learn <span class="highlight">JavaScript</span>?';
+// console.log(whyJS);
 
-whyJS.innerHTML = 'Why learn <span class="highlight">JavaScript</span>?';
-console.log(whyJS);
+// let highlight = document.querySelector(".highlight");
+// highlight.style.backgroundColor = "#ffFf82";
 
-let highlight = document.querySelector(".highlight");
-highlight.style.backgroundColor = "#ffFf82";
+// let mainImage = document.querySelector("img");
+// console.log(mainImage);
 
-let mainImage = document.querySelector("img");
-console.log(mainImage);
+// mainImage.src = "img/new-js-logo.jpeg";
+// console.log(mainImage);
 
-mainImage.src = "img/new-js-logo.jpeg";
-console.log(mainImage);
+// mainImage.alt = "new js logo";
+// console.log(mainImage);
 
-mainImage.alt = "new js logo";
-console.log(mainImage);
+// * Practice Exercises: JS, HTML & CSS ************************************************************
+// let footer = document.querySelector("footer");
+// footer.style.backgroundColor = "#d7ddf3";
+
+// let tagline = document.querySelector(".tagline");
+// tagline.innerText = "Let the flowers do the talking";
+
+// let address = document.querySelector("address");
+// console.log(address);
+// address.style.lineHeight = "1.5em";
+// address.style.fontSize = "2em";
+
+// let contactHeader = document.querySelector("h3");
+// contactHeader.innerHTML = "We're here for you <em>every day</em> of the week.";
+// console.log(contactHeader);
+
+// let instaIcon = document.querySelector(".fa-instagram");
+// console.log(instaIcon);
+// instaIcon.style.color = "#d45bb9";
+
+// let fbIcon = document.querySelector(".fa-facebook");
+// fbIcon.style.color = "#6a99b5";
+
+// let openHours = document.querySelector(".contact p");
+// openHours.style.border = "1px solid #d45bb9";
+// openHours.style.padding = "1em";
+// console.log(openHours);
