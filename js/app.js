@@ -134,10 +134,23 @@ intro.style.fontSize = "3em";
 intro.style.fontStyle = "italic";
 
 // !innerText and innerHtml
-let firstCaption = document.querySelector("figcaption");
-firstCaption.innerText = "The LaLa";
-console.log(firstCaption);
+// let firstCaption = document.querySelector("figcaption");
+// firstCaption.innerText = "The LaLa";
+// console.log(firstCaption);
 
-firstCaption = document.querySelector("figcaption");
-firstCaption.innerHTML = "The <strong>LaLa</strong>";
-console.log(firstCaption);
+// firstCaption = document.querySelector("figcaption");
+// firstCaption.innerHTML = "The <strong>LaLa</strong>";
+// console.log(firstCaption);
+
+// * Connecting JavaScript to HTML ************************************************************
+mainTitle = document.querySelector("h1");
+console.log(mainTitle.outerHTML);
+
+mainTitle = document.querySelector("h1");
+mainTitle.innerHTML = "Yay, JavaScript!!";
+
+let body = document.querySelector("body");
+console.log(body);
+
+body = document.querySelector("body");
+body.style.backgroundColor = "#FEF2F1";
