@@ -255,12 +255,23 @@ let theme = document.querySelector("body");
 //   }
 // });
 
-darkModeButton.addEventListener("click", function () {
-  if (theme.classList.contains("dark-palette")) {
-    theme.classList.remove("dark-palette");
-    darkModeButton.innerText = "Dark Mode";
-  } else {
-    theme.classList.add("dark-palette");
-    darkModeButton.innerText = "Light Mode";
-  }
+// darkModeButton.addEventListener("click", function () {
+//   if (theme.classList.contains("dark-palette")) {
+//     theme.classList.remove("dark-palette");
+//     darkModeButton.innerText = "Dark Mode";
+//   } else {
+//     theme.classList.add("dark-palette");
+//     darkModeButton.innerText = "Light Mode";
+//   }
+// });
+
+// * Click Event Kitty ************************************************************
+let button = document.querySelector(".show-cat");
+console.log(button);
+
+let cat = document.querySelector(".cat");
+console.log(cat);
+
+button.addEventListener("click", function () {
+  cat.classList.add("show");
 });
