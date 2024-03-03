@@ -394,22 +394,137 @@ let theme = document.querySelector("body");
 // hydrationFeedback();
 
 // * Budget Your Vacay ************************************************************
-let tripInfoButton = document.querySelector(".trip-info");
+// let tripInfoButton = document.querySelector(".trip-info");
 
-let dailyBudget = document.querySelector(".daily-budget");
+// let dailyBudget = document.querySelector(".daily-budget");
 
-let tripInfo = function () {
-  let totalBudget = Number(prompt("What is your total budget?"));
-  let accommodation = Number(prompt("What are your accomodation costs?"));
-  let numDays = Number(prompt("How many days does your trip last?"));
+// let tripInfo = function () {
+//   let totalBudget = Number(prompt("What is your total budget?"));
+//   let accommodation = Number(prompt("What are your accomodation costs?"));
+//   let numDays = Number(prompt("How many days does your trip last?"));
 
-  calculateDailyBudget(totalBudget, accommodation, numDays);
+//   calculateDailyBudget(totalBudget, accommodation, numDays);
+// };
+
+// let calculateDailyBudget = function (totalBudget, accommodation, numDays) {
+//   let daily = ((totalBudget - accommodation) / numDays).toFixed(2);
+
+//   dailyBudget.innerHTML = `You can spend $${daily} a day on food and fun!!`;
+// };
+
+// tripInfoButton.addEventListener("click", tripInfo);
+
+// * Practice Exercises: Function ************************************************************
+// let shoutIt = function (name) {
+//   let shout = `Hello ${name}, nice to meet you!`.toUpperCase();
+//   return shout;
+// };
+
+// console.log(shoutIt("Sheila"));
+
+// let multiply = function (num1, num2) {
+//   if (typeof num1 !== "number") {
+//     return `please provide 2 numbers`;
+//   } else if (typeof num2 !== "number") {
+//     return `2 numbers are needed`;
+//   }
+
+//   return num1 * num2;
+// };
+
+// console.log(multiply(2, 2));
+// console.log(multiply("math", 2));
+// console.log(multiply(2, "huh?"));
+
+// let response = document.querySelector(".response");
+// let showGuess = document.querySelector(".show-guess");
+// let num = Number(prompt("Guess a number between 1-25. :)"));
+
+// function guessNumber(name, num) {
+//   var randomNumber = Math.floor(Math.random() * 26); // This will produce a number between 1 and 25 - this line is error free :)
+
+//   if (num > 25) {
+//     response.innerText = "We need a number between 1 and 25.";
+//   } else if (num < 1) {
+//     response.innerText = "We need a number between 1 and 25.";
+//   }
+
+// We've got a number between 1 and 25, let's do this.
+//   showGuess.innerText = num;
+
+//   if (num === randomNumber) {
+//     response.innerText = `Hey, ${name}, you totally guessed the number! Must be your lucky day.`;
+//   } else if (num < randomNumber) {
+//     response.innerText = `Hey, ${name}, your guess was too low. The number was ${randomNumber}.`;
+//   } else if (num > randomNumber) {
+//     response.innerText = `Hey, ${name}, your guess was too high. The number was ${randomNumber}.`;
+//   } else {
+//     response.innerText = `That's not a number, {name}!`;
+//   }
+// }
+
+// guessNumber(Octavia, 7);
+
+// * Events with Parameters ************************************************************
+// let body = document.querySelector("body");
+// let season = document.querySelector("#season");
+
+// document.addEventListener("keydown", function (e) {
+//   if (e.key === "s") {
+//     body.classList.add("spring-theme");
+//   } else if (e.key === "a") {
+//     if (this.body.classList.contains("spring-theme")) {
+//       body.classList.remove("spring-theme");
+//       body.classList.add("autumn-theme");
+//     }
+//   }
+// });
+
+// season.addEventListener("change", function (e) {
+//   selection = e.target.value;
+//   if (selection === "spring") {
+//     body.classList.add("spring-theme");
+//   } else if (selection === "autumn") {
+//     if (this.body.classList.contains("spring-theme")) {
+//       body.classList.remove("spring-theme");
+//       body.classList.add("autumn-theme");
+//     }
+//   }
+// });
+
+// * Function Powered Modal ************************************************************
+let button = document.querySelector(".got-this");
+let modal = document.querySelector(".modal");
+let modalX = document.querySelector(".modal-x");
+
+button.addEventListener("click", function () {
+  modal.classList.add("show-modal");
+  button.innerText = "You've got this!!";
+});
+
+modalX.addEventListener("click", function () {
+  closeModal();
+  //   modal.classList.remove("show-modal");
+  //   button.innerText = "Who's got this?";
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    console.log("Escape key pressed");
+  }
+  if (modal.classList.contains("show-modal")) {
+    closeModal();
+    // modal.classList.remove("show-modal");
+    // button.innerText = "Who's got this?";
+  }
+});
+
+let closeModal = function () {
+  modal.classList.remove("show-modal");
+  button.innerText = "Who's got this?";
 };
 
-let calculateDailyBudget = function (totalBudget, accommodation, numDays) {
-  let daily = ((totalBudget - accommodation) / numDays).toFixed(2);
-
-  dailyBudget.innerHTML = `You can spend $${daily} a day on food and fun!!`;
+let openModal = function () {
+  modal.classList.add("show-modal");
+  button.innerText = "You've got this!!";
 };
-
-tripInfoButton.addEventListener("click", tripInfo);
