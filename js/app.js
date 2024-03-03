@@ -606,3 +606,23 @@ let age = employeeAges.indexOf(36);
 console.log(age); //1
 
 // if the element does not exist in the array -1 will be returned
+
+// * Loops ************************************************************
+timeOfDay = [6, "noon", 8, "morning", "evening", 12];
+
+for (let time of timeOfDay) {
+  console.log(`It is ${time}`);
+}
+
+timeOfDay.forEach(function (time, index) {
+  console.log(`The ${time} element is at position ${index}.`);
+});
+
+employeeAges = [15, 36, 78, 25, 17, 42];
+let adultAge = employeeAges.filter(function (item) {
+  return item >= 18;
+});
+console.log(adultAge);
+
+//can also use .includes()
+//example return item.includes("Martin")
