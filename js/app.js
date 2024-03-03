@@ -493,38 +493,70 @@ let theme = document.querySelector("body");
 // });
 
 // * Function Powered Modal ************************************************************
-let button = document.querySelector(".got-this");
-let modal = document.querySelector(".modal");
-let modalX = document.querySelector(".modal-x");
+// let button = document.querySelector(".got-this");
+// let modal = document.querySelector(".modal");
+// let modalX = document.querySelector(".modal-x");
 
-button.addEventListener("click", function () {
-  modal.classList.add("show-modal");
-  button.innerText = "You've got this!!";
+// button.addEventListener("click", function () {
+//   modal.classList.add("show-modal");
+//   button.innerText = "You've got this!!";
+// });
+
+// modalX.addEventListener("click", function () {
+//   closeModal();
+//   //   modal.classList.remove("show-modal");
+//   //   button.innerText = "Who's got this?";
+// });
+
+// document.addEventListener("keydown", function (e) {
+//   if (e.key === "Escape") {
+//     console.log("Escape key pressed");
+//   }
+//   if (modal.classList.contains("show-modal")) {
+//     closeModal();
+//     // modal.classList.remove("show-modal");
+//     // button.innerText = "Who's got this?";
+//   }
+// });
+
+// let closeModal = function () {
+//   modal.classList.remove("show-modal");
+//   button.innerText = "Who's got this?";
+// };
+
+// let openModal = function () {
+//   modal.classList.add("show-modal");
+//   button.innerText = "You've got this!!";
+// };
+
+// * Subscripton Calculator ************************************************************
+let subTypeElement = document.querySelector("#subscription");
+let subDurationElement = document.querySelector("#months");
+let result = document.querySelector(".result");
+let subType = "basic";
+let subDuration = Number(1);
+
+subTypeElement.addEventListener("change", function (e) {
+  subType = e.target.value;
+  updateSubscriptionDiv();
+  //   console.log(subType);
 });
 
-modalX.addEventListener("click", function () {
-  closeModal();
-  //   modal.classList.remove("show-modal");
-  //   button.innerText = "Who's got this?";
+subDurationElement.addEventListener("change", function (e) {
+  subDuration = Number(e.target.value);
+  updateSubscriptionDiv();
+  //   console.log(subDuration);
 });
 
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") {
-    console.log("Escape key pressed");
+let updateSubscriptionDiv = function () {
+  let monthlyCost = 5;
+  if (subType === "standard") {
+    monthlyCost = 7;
+  } else if (subType === "premium") {
+    monthlyCost = 10;
   }
-  if (modal.classList.contains("show-modal")) {
-    closeModal();
-    // modal.classList.remove("show-modal");
-    // button.innerText = "Who's got this?";
-  }
-});
 
-let closeModal = function () {
-  modal.classList.remove("show-modal");
-  button.innerText = "Who's got this?";
-};
-
-let openModal = function () {
-  modal.classList.add("show-modal");
-  button.innerText = "You've got this!!";
+  let total = subDuration * monthlyCost;
+  result.innerText = `You have chosen a ${subDuration} month ${subType}
+    plan for $${total}`;
 };
