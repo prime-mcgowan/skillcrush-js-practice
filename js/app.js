@@ -266,20 +266,57 @@ let theme = document.querySelector("body");
 // });
 
 // * Click Event Kitty ************************************************************
-let button = document.querySelector(".show-cat");
-console.log(button);
+// let button = document.querySelector(".show-cat");
+// console.log(button);
 
-let cat = document.querySelector(".cat");
-console.log(cat);
+// let cat = document.querySelector(".cat");
+// console.log(cat);
 
-button.addEventListener("click", function () {
-  if (cat.classList.contains("show")) {
-    cat.classList.remove("show");
-    button.innerText = "Wait, come back!!";
-    button.classList.add("disappear");
+// button.addEventListener("click", function () {
+//   if (cat.classList.contains("show")) {
+//     cat.classList.remove("show");
+//     button.innerText = "Wait, come back!!";
+//     button.classList.add("disappear");
+//   } else {
+//     cat.classList.add("show");
+//     button.innerText = "Shoo, cat!!";
+//     button.classList.remove("disappear");
+//   }
+// });
+
+// * Practice Exercises: Events & Event Listeners ************************************************************
+let fans = document.querySelector(".fans");
+fans.addEventListener("mouseover", function () {
+  fans.innerText = "123K";
+});
+
+let fish = document.querySelector(".fish");
+fish.addEventListener("mouseover", function () {
+  fish.innerText = "47K";
+});
+
+let pets = document.querySelector(".pets");
+pets.addEventListener("mouseover", function () {
+  pets.innerText = "20K";
+});
+
+let toggle = document.querySelector("#toggle");
+
+let ball = document.querySelector(".ball");
+
+let catName = document.querySelector("h1");
+
+body = document.querySelector("body");
+console.log(catName);
+
+toggle.addEventListener("click", function () {
+  if (body.classList.contains("light")) {
+    body.classList.remove("light");
+    ball.classList.remove("move-right");
+    catName.innerText = "Stealth Quincy";
   } else {
-    cat.classList.add("show");
-    button.innerText = "Shoo, cat!!";
-    button.classList.remove("disappear");
+    body.classList.add("light");
+    ball.classList.add("move-right");
+    catName.innerText = "Party Quincy";
   }
 });
