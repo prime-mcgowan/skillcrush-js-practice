@@ -626,3 +626,34 @@ console.log(adultAge);
 
 //can also use .includes()
 //example return item.includes("Martin")
+
+// * Working with Arrays ************************************************************
+let hobbies = [
+  "gardening",
+  "painting",
+  "golf",
+  "knitting",
+  "coloring",
+  "swimming",
+];
+
+console.log(hobbies.length);
+hobbies.push("pickleball");
+console.log(hobbies[2]);
+hobbies.pop();
+hobbies.splice(2, 0, "clogging", "bird watching");
+hobbies.shift();
+hobbies.unshift("dancing");
+console.log(hobbies);
+
+let goals = ["code", "fruit", "sleep"];
+let allTheThings = [...hobbies, ...goals];
+let num = allTheThings.indexOf("clogging");
+allTheThings.splice(2, 1);
+console.log(allTheThings);
+
+let plans = allTheThings.map(function (item) {
+  return `I can't wait to start ${item}`;
+});
+
+console.log(plans);
