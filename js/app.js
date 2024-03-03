@@ -361,34 +361,55 @@ let theme = document.querySelector("body");
 // console.log(lunchForTwo);
 
 // * What's Your Function ************************************************************
-let startMyDay = function () {
-  console.log("Time for coffee!!");
+// let startMyDay = function () {
+//   console.log("Time for coffee!!");
+// };
+
+// startMyDay();
+
+// let favoriteCookie = function (cookie) {
+//   console.log(`My favorite cookie is ${cookie}`);
+// };
+
+// favoriteCookie("chocolate chip");
+
+// let introduce = function (name, occupation) {
+//   console.log(`My name is ${name} and I am a ${occupation}`);
+// };
+
+// introduce("Laura", "Software Developer");
+// introduce("Cameron", "Small Business Owner");
+
+// let hydrationFeedback = function () {
+//   let numGlasses = Number(
+//     prompt("How many glasses of water did you drink today?")
+//   );
+//   if (numGlasses >= 8) {
+//     console.log("Way to go!! You are hydrated!!");
+//   } else {
+//     console.log("Not bad...let't try for more H20 tomorrow!!");
+//   }
+// };
+
+// hydrationFeedback();
+
+// * Budget Your Vacay ************************************************************
+let tripInfoButton = document.querySelector(".trip-info");
+
+let dailyBudget = document.querySelector(".daily-budget");
+
+let tripInfo = function () {
+  let totalBudget = Number(prompt("What is your total budget?"));
+  let accommodation = Number(prompt("What are your accomodation costs?"));
+  let numDays = Number(prompt("How many days does your trip last?"));
+
+  calculateDailyBudget(totalBudget, accommodation, numDays);
 };
 
-startMyDay();
+let calculateDailyBudget = function (totalBudget, accommodation, numDays) {
+  let daily = ((totalBudget - accommodation) / numDays).toFixed(2);
 
-let favoriteCookie = function (cookie) {
-  console.log(`My favorite cookie is ${cookie}`);
+  dailyBudget.innerHTML = `You can spend $${daily} a day on food and fun!!`;
 };
 
-favoriteCookie("chocolate chip");
-
-let introduce = function (name, occupation) {
-  console.log(`My name is ${name} and I am a ${occupation}`);
-};
-
-introduce("Laura", "Software Developer");
-introduce("Cameron", "Small Business Owner");
-
-let hydrationFeedback = function () {
-  let numGlasses = Number(
-    prompt("How many glasses of water did you drink today?")
-  );
-  if (numGlasses >= 8) {
-    console.log("Way to go!! You are hydrated!!");
-  } else {
-    console.log("Not bad...let't try for more H20 tomorrow!!");
-  }
-};
-
-hydrationFeedback();
+tripInfoButton.addEventListener("click", tripInfo);
