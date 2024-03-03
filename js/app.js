@@ -530,33 +530,79 @@ let theme = document.querySelector("body");
 // };
 
 // * Subscripton Calculator ************************************************************
-let subTypeElement = document.querySelector("#subscription");
-let subDurationElement = document.querySelector("#months");
-let result = document.querySelector(".result");
-let subType = "basic";
-let subDuration = Number(1);
+// let subTypeElement = document.querySelector("#subscription");
+// let subDurationElement = document.querySelector("#months");
+// let result = document.querySelector(".result");
+// let subType = "basic";
+// let subDuration = Number(1);
 
-subTypeElement.addEventListener("change", function (e) {
-  subType = e.target.value;
-  updateSubscriptionDiv();
-  //   console.log(subType);
+// subTypeElement.addEventListener("change", function (e) {
+//   subType = e.target.value;
+//   updateSubscriptionDiv();
+
+// });
+
+// subDurationElement.addEventListener("change", function (e) {
+//   subDuration = Number(e.target.value);
+//   updateSubscriptionDiv();
+
+// });
+
+// let updateSubscriptionDiv = function () {
+//   let monthlyCost = 5;
+//   if (subType === "standard") {
+//     monthlyCost = 7;
+//   } else if (subType === "premium") {
+//     monthlyCost = 10;
+//   }
+
+//   let total = subDuration * monthlyCost;
+//   result.innerText = `You have chosen a ${subDuration} month ${subType}
+//     plan for $${total}`;
+// };
+
+// * Arrays ************************************************************
+let dressSizes = [8, 16, 2, 24, "small", "medium"];
+dressSizes.push("large"); //adds to the end of the array
+dressSizes.pop(); //takes the last size out of the array
+
+dressSizes.forEach(function (size, index) {
+  console.log(`${index + 1}. Sizes ${size}`); //the list will start at 1. instead of 0.
 });
 
-subDurationElement.addEventListener("change", function (e) {
-  subDuration = Number(e.target.value);
-  updateSubscriptionDiv();
-  //   console.log(subDuration);
-});
+// for (let size of dressSizes) {
+//   console.log(`This dress is size ${size}`);
+// }
 
-let updateSubscriptionDiv = function () {
-  let monthlyCost = 5;
-  if (subType === "standard") {
-    monthlyCost = 7;
-  } else if (subType === "premium") {
-    monthlyCost = 10;
-  }
+let timeOfDay = [6, "noon", 8, "morning"];
 
-  let total = subDuration * monthlyCost;
-  result.innerText = `You have chosen a ${subDuration} month ${subType}
-    plan for $${total}`;
-};
+//to determine lenght of array = .length property
+console.log(timeOfDay.length);
+
+//to identify index positioning of an element
+console.log(timeOfDay[2]);
+
+//replace an array element
+timeOfDay[2] = "midnight";
+console.log(timeOfDay);
+
+//see if an element is included in an array
+console.log(timeOfDay.includes("midnight"));
+
+//splice - remove
+timeOfDay.splice(0, 2); //index position to start, # of elements to remove
+console.log(timeOfDay);
+
+//splice - replace
+timeOfDay.splice(0, 2, "evening", 10);
+
+//splice - add (without deleting or replacing)
+timeOfDay.splice(4, 0, "twilight", 2, 9);
+
+//indexOf
+let employeeAges = [15, 36, 78, 25, 17, 42];
+
+let age = employeeAges.indexOf(36);
+console.log(age); //1
+
+// if the element does not exist in the array -1 will be returned
