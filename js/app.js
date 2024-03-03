@@ -225,14 +225,14 @@ if (time < 12) {
 //   button.classList.add("deemphasize-button");
 // });
 
-let title = document.querySelector("h1");
-title.addEventListener("mouseover", function () {
-  title.innerText = "Let's Party!!";
-  title.style.color = "maroon";
-});
+// let title = document.querySelector("h1");
+// title.addEventListener("mouseover", function () {
+//   title.innerText = "Let's Party!!";
+//   title.style.color = "maroon";
+// });
 
-let darkModeButton = document.querySelector(".dark-mode");
-let body = document.querySelector("body");
+// let darkModeButton = document.querySelector(".dark-mode");
+// let body = document.querySelector("body");
 
 // darkModeButton.addEventListener("click", function () {
 //   body.classList.add("dark-palette");
@@ -285,38 +285,110 @@ let theme = document.querySelector("body");
 // });
 
 // * Practice Exercises: Events & Event Listeners ************************************************************
-let fans = document.querySelector(".fans");
-fans.addEventListener("mouseover", function () {
-  fans.innerText = "123K";
-});
+// let fans = document.querySelector(".fans");
+// fans.addEventListener("mouseover", function () {
+//   fans.innerText = "123K";
+// });
 
-let fish = document.querySelector(".fish");
-fish.addEventListener("mouseover", function () {
-  fish.innerText = "47K";
-});
+// let fish = document.querySelector(".fish");
+// fish.addEventListener("mouseover", function () {
+//   fish.innerText = "47K";
+// });
 
-let pets = document.querySelector(".pets");
-pets.addEventListener("mouseover", function () {
-  pets.innerText = "20K";
-});
+// let pets = document.querySelector(".pets");
+// pets.addEventListener("mouseover", function () {
+//   pets.innerText = "20K";
+// });
 
-let toggle = document.querySelector("#toggle");
+// let toggle = document.querySelector("#toggle");
 
-let ball = document.querySelector(".ball");
+// let ball = document.querySelector(".ball");
 
-let catName = document.querySelector("h1");
+// let catName = document.querySelector("h1");
 
-body = document.querySelector("body");
-console.log(catName);
+// body = document.querySelector("body");
+// console.log(catName);
 
-toggle.addEventListener("click", function () {
-  if (body.classList.contains("light")) {
-    body.classList.remove("light");
-    ball.classList.remove("move-right");
-    catName.innerText = "Stealth Quincy";
+// toggle.addEventListener("click", function () {
+//   if (body.classList.contains("light")) {
+//     body.classList.remove("light");
+//     ball.classList.remove("move-right");
+//     catName.innerText = "Stealth Quincy";
+//   } else {
+//     body.classList.add("light");
+//     ball.classList.add("move-right");
+//     catName.innerText = "Party Quincy";
+//   }
+// });
+
+// let button = document.querySelector(".got-this");
+
+// let modal = document.querySelector(".modal");
+
+// let modalX = document.querySelector(".modal-x");
+
+// button.addEventListener("click", function () {
+//   modal.classList.add("show-modal");
+//   button.innerText = "You've got this!!";
+// });
+
+// modalX.addEventListener("click", function () {
+//   modal.classList.remove("show-modal");
+//   button.innerText = "Who's got this?";
+// });
+
+// * Practice Exercises: Events & Event Listeners ************************************************************
+// let welcome = function (name) {
+//   console.log(`Hi, ${name}. Have a great day!`);
+// };
+
+// welcome("Vera"); // Welcome, Vera. Have a great day!
+
+// let addTogether = function (num1, num2) {
+//   console.log(num1 + num2);
+// };
+
+// addTogether(5, 10); // 15
+
+// //! Return Key
+// addTogether = function (num1, num2) {
+//   return num1 + num2;
+// };
+
+// alert(addTogether(2, 2));
+// console.log(addTogether(4, 8));
+// let lunchForTwo = addTogether(5, 4);
+// console.log(lunchForTwo);
+
+// * What's Your Function ************************************************************
+let startMyDay = function () {
+  console.log("Time for coffee!!");
+};
+
+startMyDay();
+
+let favoriteCookie = function (cookie) {
+  console.log(`My favorite cookie is ${cookie}`);
+};
+
+favoriteCookie("chocolate chip");
+
+let introduce = function (name, occupation) {
+  console.log(`My name is ${name} and I am a ${occupation}`);
+};
+
+introduce("Laura", "Software Developer");
+introduce("Cameron", "Small Business Owner");
+
+let hydrationFeedback = function () {
+  let numGlasses = Number(
+    prompt("How many glasses of water did you drink today?")
+  );
+  if (numGlasses >= 8) {
+    console.log("Way to go!! You are hydrated!!");
   } else {
-    body.classList.add("light");
-    ball.classList.add("move-right");
-    catName.innerText = "Party Quincy";
+    console.log("Not bad...let't try for more H20 tomorrow!!");
   }
-});
+};
+
+hydrationFeedback();
