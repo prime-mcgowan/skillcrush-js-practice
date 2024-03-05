@@ -628,32 +628,74 @@ console.log(adultAge);
 //example return item.includes("Martin")
 
 // * Working with Arrays ************************************************************
-let hobbies = [
-  "gardening",
-  "painting",
-  "golf",
-  "knitting",
-  "coloring",
-  "swimming",
+// let hobbies = [
+//   "gardening",
+//   "painting",
+//   "golf",
+//   "knitting",
+//   "coloring",
+//   "swimming",
+// ];
+
+// console.log(hobbies.length);
+// hobbies.push("pickleball");
+// console.log(hobbies[2]);
+// hobbies.pop();
+// hobbies.splice(2, 0, "clogging", "bird watching");
+// hobbies.shift();
+// hobbies.unshift("dancing");
+// console.log(hobbies);
+
+// let goals = ["code", "fruit", "sleep"];
+// let allTheThings = [...hobbies, ...goals];
+// let num = allTheThings.indexOf("clogging");
+// allTheThings.splice(2, 1);
+// console.log(allTheThings);
+
+// let plans = allTheThings.map(function (item) {
+//   return `I can't wait to start ${item}`;
+// });
+
+// console.log(plans);
+
+// * Looping Arrays ************************************************************
+var programmingLanguages = [
+  "Scala",
+  "Java",
+  "Go",
+  "Swift",
+  "Cobol",
+  "JavaScript",
+  "Python",
+  "Ruby",
+  "Elm",
+  "Rust",
+  "C#",
 ];
 
-console.log(hobbies.length);
-hobbies.push("pickleball");
-console.log(hobbies[2]);
-hobbies.pop();
-hobbies.splice(2, 0, "clogging", "bird watching");
-hobbies.shift();
-hobbies.unshift("dancing");
-console.log(hobbies);
+// for (let time of timeOfDay) {
+//     console.log(`It is ${time}`);
+//   }
 
-let goals = ["code", "fruit", "sleep"];
-let allTheThings = [...hobbies, ...goals];
-let num = allTheThings.indexOf("clogging");
-allTheThings.splice(2, 1);
-console.log(allTheThings);
+for (let language of programmingLanguages) {
+  console.log(`Here is an example of a programing langugage: ${language}`);
+}
 
-let plans = allTheThings.map(function (item) {
-  return `I can't wait to start ${item}`;
+// timeOfDay.forEach(function (time, index) {
+//     console.log(`The ${time} element is at position ${index}.`);
+//   });
+
+programmingLanguages.forEach(function (language, index) {
+  console.log(`${index + 1}. ${language}`.toUpperCase());
 });
 
-console.log(plans);
+// employeeAges = [15, 36, 78, 25, 17, 42];
+// let adultAge = employeeAges.filter(function (item) {
+//   return item >= 18;
+// });
+// console.log(adultAge);
+
+let updatedLanguages = programmingLanguages.filter(function (item) {
+  return item.includes("y");
+});
+console.log(updatedLanguages);
