@@ -870,66 +870,97 @@ const assignButton = document.querySelector(".assign");
 
 const assignedItems = document.querySelector(".assigned-items");
 
-addGuestButton.addEventListener("click", function () {
-  let guest = guestInput.value;
-  //   console.log(guest);
-  if (guest !== "") {
-    addToList(guest);
-    updateGuestCount();
-    clearInput();
-  }
-});
+// addGuestButton.addEventListener("click", function () {
+//   let guest = guestInput.value;
+//   //   console.log(guest);
+//   if (guest !== "") {
+//     addToList(guest);
+//     updateGuestCount();
+//     clearInput();
+//   }
+// });
 
-const clearInput = function () {
-  guestInput.value = "";
-};
+// const clearInput = function () {
+//   guestInput.value = "";
+// };
 
-const addToList = function (guest) {
-  listItem = document.createElement("li");
-  listItem.innerText = guest;
-  guestList.append(listItem);
-};
+// const addToList = function (guest) {
+//   listItem = document.createElement("li");
+//   listItem.innerText = guest;
+//   guestList.append(listItem);
+// };
 
-const updateGuestCount = function () {
-  let guests = document.querySelectorAll(".guest-list li");
-  guestCount.innerText = guests.length;
-  if (guests.length === 2) {
-    addGuestButton.classList.add("hide");
-    guestInput.classList.add("hide");
-    guestInputLabel.classList.add("hide");
-    guestFull.classList.remove("hide");
-  }
-};
+// const updateGuestCount = function () {
+//   let guests = document.querySelectorAll(".guest-list li");
+//   guestCount.innerText = guests.length;
+//   if (guests.length === 2) {
+//     addGuestButton.classList.add("hide");
+//     guestInput.classList.add("hide");
+//     guestInputLabel.classList.add("hide");
+//     guestFull.classList.remove("hide");
+//   }
+// };
 
 // * Assign Potluck Dish ****************************************
-let assignItems = function () {
-  let potluckItems = [
-    "veggies",
-    "dip",
-    "chips",
-    "burgers",
-    // buns,
-    // cheese,
-    // ketchup,
-    // mustard,
-    // fruit,
-    // tomato,
-    // onion,
-    // pop,
-  ];
-  let allGuests = document.querySelectorAll(".guest-list li");
-  for (let guest of allGuests) {
-    let randomPotluckIndex = Math.floor(Math.random() * potluckItems.length);
-    let randomPotluckItem = potluckItems[randomPotluckIndex];
+// let assignItems = function () {
+//   let potluckItems = [
+//     "veggies",
+//     "dip",
+//     "chips",
+//     "burgers",
+//   ];
+//   let allGuests = document.querySelectorAll(".guest-list li");
+//   for (let guest of allGuests) {
+//     let randomPotluckIndex = Math.floor(Math.random() * potluckItems.length);
+//     let randomPotluckItem = potluckItems[randomPotluckIndex];
 
-    let listItem = document.createElement("li");
-    listItem.innerText = `${guest.innerText} is bringing ${randomPotluckItem}.`;
-    assignedItems.append(listItem);
-    potluckItems.splice(randomPotluckIndex, 1);
-  }
+//     let listItem = document.createElement("li");
+//     listItem.innerText = `${guest.innerText} is bringing ${randomPotluckItem}.`;
+//     assignedItems.append(listItem);
+//     potluckItems.splice(randomPotluckIndex, 1);
+//   }
+// };
+
+// assignButton.addEventListener("click", function () {
+//   assignItems();
+//   assignButton.disabled = true;
+// });
+
+// * Scope Practice ****************************************
+
+// * Math.min & Math.max Practice
+const button = document.querySelector(".show-results");
+const results = document.querySelector(".results");
+const expensesList = document.querySelector(".expenses");
+
+const expenses = [
+  9.99, 25.8, 144.39, 12.98, 4.99, 38.75, 14.5, 99.99, 75.4, 4.75, 62.88,
+];
+
+// Display your expenses in a list
+for (let exp of expenses) {
+  let li = document.createElement("li");
+  li.innerText = `$ ${exp}`;
+  expensesList.append(li);
+}
+
+// Write showMinMax function here
+const showMinMax = function (expenses) {
+  let min = Math.min(...expenses);
+  let max = Math.max(...expenses);
+
+  let minListItem = document.createElement("li");
+  minListItem.innerText = `Min: $ ${min}`;
+
+  let maxListItem = document.createElement("li");
+  maxListItem.innerText = `Max: $ ${max}`;
+
+  results.append(minListItem, maxListItem);
+  results.classList.remove("hide");
 };
 
-assignButton.addEventListener("click", function () {
-  assignItems();
-  assignButton.disabled = true;
+// Write click event listener for 'button' and call the showMinMax function
+button.addEventListener("click", function () {
+  showMinMax(expenses);
+  button.disabled = true;
 });
