@@ -24,20 +24,31 @@
   <body>
     <div class="container">
       <header>
-        <h1>Favorite TV Shows</h1>
+        <h1>Potluck Guest List</h1>
+
+        <h3>
+          <i class="fa fa-envelope" aria-hidden="true"></i> Invite 8 people! :)
+        </h3>
       </header>
-      <main>
-        <div class="add-show">
-          <h3>What are your favorite shows?</h3>
-          <label for="add">Add Show</label>
-          <input type="text" id="add" />
-          <button class="add">Add</button>
+      <div class="add-guest">
+        <div class="alert hide">
+          <h3>Guest list is full!</h3>
+          <button class="assign"><a href="#assigned">Assign dishes!</a></button>
         </div>
-        <div class="show-list-container">
-          <h3><span class="number">0</span> Favorites</h3>
-          <ul class="show-list"></ul>
-        </div>
-      </main>
+        <label for="invite">Add Guest</label>
+        <input type="text" id="invite" />
+        <button class="invite">Invite</button>
+      </div>
+      <div class="guest-list-container">
+        <ul class="guest-list"></ul>
+        <p class="attendees">Attending: <span class="attendance">0</span></p>
+      </div>
+      <div id="assigned" class="items-list-container">
+        <ul class="assigned-items"></ul>
+      </div>
+      <footer class="hide">
+        <h3>See you on Saturday!</h3>
+      </footer>
     </div>
   </body>
 </html>

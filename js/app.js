@@ -826,28 +826,61 @@ console.log(soda);
 // ReferenceERROR: soda not defined
 
 // * GATHER INPUT & CREATE ELEMENTS ****************************************
-// add button
-const addShowButton = document.querySelector(".add");
-// label for the add button
-const showInput = document.querySelector(".add-show input");
-// unordered list (not yet visible)
-const showList = document.querySelector(".show-list");
-// span class for number of favorite shows
-const showCount = document.querySelector(".number");
+// // add button
+// const addShowButton = document.querySelector(".add");
+// // label for the add button
+// const showInput = document.querySelector(".add-show input");
+// // unordered list (not yet visible)
+// const showList = document.querySelector(".show-list");
+// // span class for number of favorite shows
+// const showCount = document.querySelector(".number");
 
-// value property will capture the value entered into the input box:
-addShowButton.addEventListener("click", function () {
-  const show = showInput.value;
-  // use the value to populate a list
-  if (show !== "") {
-    // next line creates the li in the html
-    let listItem = document.createElement("li");
-    // set the li to the value of the input (show the user inputted)
-    listItem.innerText = show;
-    // show will will be added to the list (points to the ul/li)
-    showList.append(listItem);
-    //  the length property reads the number of shows and displays the result
-    let shows = document.querySelectorAll(".show-list li");
-    showCount.innerText = shows.length;
+// // value property will capture the value entered into the input box:
+// addShowButton.addEventListener("click", function () {
+//   const show = showInput.value;
+//   // use the value to populate a list
+//   if (show !== "") {
+//     // next line creates the li in the html
+//     let listItem = document.createElement("li");
+//     // set the li to the value of the input (show the user inputted)
+//     listItem.innerText = show;
+//     // show will will be added to the list (points to the ul/li)
+//     showList.append(listItem);
+//     //  the length property reads the number of shows and displays the result
+//     let shows = document.querySelectorAll(".show-list li");
+//     showCount.innerText = shows.length;
+//   }
+// });
+
+// * Assemble a Potluck Guest List ****************************************
+// invite button
+const addGuestButton = document.querySelector(".invite");
+// label for the invite button
+const guestInputLabel = document.querySelector(".add-guest label");
+// text input box
+const guestInput = document.querySelector(".add-guest input");
+// unordered list (not yet visible)
+const guestList = document.querySelector(".guest-list");
+// span class for number of guests attending
+const guestCount = document.querySelector(".attendance");
+// alert when guest list is full (not yet visible)
+const guestFull = document.querySelector(".alert");
+
+addGuestButton.addEventListener("click", function () {
+  let guest = guestInput.value;
+  //   console.log(guest);
+  if (guest !== "") {
+    addToList(guest);
+    clearInput();
   }
 });
+
+let clearInput = function () {
+  guestInput.value = "";
+};
+
+let addToList = function (guest) {
+  listItem = document.createElement("li");
+  listItem.innerText = guest;
+  guestList.append(listItem);
+};
