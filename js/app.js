@@ -871,16 +871,28 @@ addGuestButton.addEventListener("click", function () {
   //   console.log(guest);
   if (guest !== "") {
     addToList(guest);
+    updateGuestCount();
     clearInput();
   }
 });
 
-let clearInput = function () {
+const clearInput = function () {
   guestInput.value = "";
 };
 
-let addToList = function (guest) {
+const addToList = function (guest) {
   listItem = document.createElement("li");
   listItem.innerText = guest;
   guestList.append(listItem);
+};
+
+const updateGuestCount = function () {
+  let guests = document.querySelectorAll(".guest-list li");
+  guestCount.innerText = guests.length;
+  if (guests.length === 8) {
+    addGuestButton.classList.add("hide");
+    guestInput.classList.add("hide");
+    guestInputLabel.classList.add("hide");
+    guestFull.classList.remove("hide");
+  }
 };
