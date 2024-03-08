@@ -745,3 +745,57 @@ console.log(newGroceries.length);
 newGroceries.forEach(function (item, index) {
   console.log(`${index + 1}. ${item}`);
 });
+
+// * Practice: Arrays & Loops ************************************************************
+var stuff = [
+  "cars",
+  "blankets",
+  "sunflowers",
+  "sky",
+  "yellow",
+  "code",
+  "perfume",
+  "coffee",
+  "books",
+];
+
+// stuff.forEach(function (item, index) {
+//   if (index % 2 === 0) {
+//     console.log(item);
+//   }
+// });
+
+// let removeItem = function (array, item) {
+//   let index = array.indexOf(item);
+
+//   //   the -1 means the item was not found in the array
+//   if (index === -1) {
+//     console.log(`Sorry, ${item} is not on the list`);
+//   } else {
+//     array.splice(index, 1);
+//     console.log(`Removing ${item}`);
+//   }
+// };
+
+// removeItem(stuff, "coffee");
+// removeItem(stuff, "hat");
+// console.log(stuff);
+
+let filterStuff = function (list) {
+  let sArray = [];
+
+  for (let item of list) {
+    if (item.includes("s")) {
+      sArray.push(item);
+    }
+  }
+  return sArray;
+};
+
+let newList = filterStuff(stuff);
+console.log(newList);
+
+let updatedList = stuff.filter(function (item) {
+  return item.includes("s");
+});
+console.log(updatedList);
