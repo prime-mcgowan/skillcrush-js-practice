@@ -866,6 +866,10 @@ const guestCount = document.querySelector(".attendance");
 // alert when guest list is full (not yet visible)
 const guestFull = document.querySelector(".alert");
 
+const assignButton = document.querySelector(".assign");
+
+const assignedItems = document.querySelector(".assigned-items");
+
 addGuestButton.addEventListener("click", function () {
   let guest = guestInput.value;
   //   console.log(guest);
@@ -889,10 +893,43 @@ const addToList = function (guest) {
 const updateGuestCount = function () {
   let guests = document.querySelectorAll(".guest-list li");
   guestCount.innerText = guests.length;
-  if (guests.length === 8) {
+  if (guests.length === 2) {
     addGuestButton.classList.add("hide");
     guestInput.classList.add("hide");
     guestInputLabel.classList.add("hide");
     guestFull.classList.remove("hide");
   }
 };
+
+// * Assign Potluck Dish ****************************************
+let assignItems = function () {
+  let potluckItems = [
+    "veggies",
+    "dip",
+    "chips",
+    "burgers",
+    // buns,
+    // cheese,
+    // ketchup,
+    // mustard,
+    // fruit,
+    // tomato,
+    // onion,
+    // pop,
+  ];
+  let allGuests = document.querySelectorAll(".guest-list li");
+  for (let guest of allGuests) {
+    let randomPotluckIndex = Math.floor(Math.random() * potluckItems.length);
+    let randomPotluckItem = potluckItems[randomPotluckIndex];
+
+    let listItem = document.createElement("li");
+    listItem.innerText = `${guest.innerText} is bringing ${randomPotluckItem}.`;
+    assignedItems.append(listItem);
+    potluckItems.splice(randomPotluckIndex, 1);
+  }
+};
+
+assignButton.addEventListener("click", function () {
+  assignItems();
+  assignButton.disabled = true;
+});
