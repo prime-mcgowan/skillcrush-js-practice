@@ -92,77 +92,75 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  font-family: "Source Code Pro", sans-serif;
-  background-color: #aaabe4;
-  color: #3a3dd8;
+  font-family: "B612", sans-serif;
+  background-color: #532a7f;
+  color: #fff;
   font-size: 16px;
 }
 
 h1 {
   width: 100%;
-  padding: 1em 0;
-  padding-bottom: 0;
-  margin: 0;
+  padding-top: 1em;
   font-size: 3em;
   text-align: center;
-  font-family: "Source Code Pro", sans-serif;
+  font-family: "Archivo", sans-serif;
 }
-
 .container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   width: 90%;
   max-width: 800px;
 }
-
-.expenses {
-  width: 100%;
-  text-align: center;
+.mix {
+  padding: 0 3em;
+  margin: 0;
   list-style: none;
-  padding: 0;
-}
-
-.expenses li {
-  padding: 0.55em 0;
-}
-
-.results {
-  display: flex;
-  justify-content: space-around;
-  width: 50%;
-  padding: 0;
-  list-style: none;
-}
-
-.results li {
-  padding: 1em;
-  background: white;
+  border: 3px solid #fff;
 }
 
 .hide {
   display: none;
 }
 
-button.show-results {
-  width: 50%;
-  padding: 1em;
-  color: #3a3dd8;
+.total {
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  padding-bottom: 1em;
+}
+.mix .song {
+  padding: 0.5em;
+  margin: 0.75em 0;
   font-size: 1.25em;
-  align-self: center;
-  outline: none;
-  border: 0;
-  cursor: pointer;
 }
 
-button:active {
-  transform: scale(0.98);
+.mix .song-number {
+  display: inline-block;
+  padding: 0.45em;
+  margin-right: 0.25em;
+  background-color: #9634ff;
+}
+
+button.show-list {
+  margin: 2em 0;
+  width: 50%;
+  padding: 1em;
+  color: #532a7f;
+  font-size: 1.25em;
+  align-self: center;
 }
 
 @media screen and (min-width: 800px) {
-  button.show-results {
-    width: 45%;
+  .mix .song {
+    width: 50%;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  button.show-list {
+    width: 25%;
     font-size: 1.5em;
   }
 }

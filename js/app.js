@@ -928,39 +928,76 @@ const assignedItems = document.querySelector(".assigned-items");
 
 // * Scope Practice ****************************************
 
-// * Math.min & Math.max Practice
-const button = document.querySelector(".show-results");
-const results = document.querySelector(".results");
-const expensesList = document.querySelector(".expenses");
+// // * Math.min & Math.max Practice
+// const button = document.querySelector(".show-results");
+// const results = document.querySelector(".results");
+// const expensesList = document.querySelector(".expenses");
 
-const expenses = [
-  9.99, 25.8, 144.39, 12.98, 4.99, 38.75, 14.5, 99.99, 75.4, 4.75, 62.88,
+// const expenses = [
+//   9.99, 25.8, 144.39, 12.98, 4.99, 38.75, 14.5, 99.99, 75.4, 4.75, 62.88,
+// ];
+
+// // Display your expenses in a list
+// for (let exp of expenses) {
+//   let li = document.createElement("li");
+//   li.innerText = `$ ${exp}`;
+//   expensesList.append(li);
+// }
+
+// // Write showMinMax function here
+// const showMinMax = function (expenses) {
+//   let min = Math.min(...expenses);
+//   let max = Math.max(...expenses);
+
+//   let minListItem = document.createElement("li");
+//   minListItem.innerText = `Min: $ ${min}`;
+
+//   let maxListItem = document.createElement("li");
+//   maxListItem.innerText = `Max: $ ${max}`;
+
+//   results.append(minListItem, maxListItem);
+//   results.classList.remove("hide");
+// };
+
+// // Write click event listener for 'button' and call the showMinMax function
+// button.addEventListener("click", function () {
+//   showMinMax(expenses);
+//   button.disabled = true;
+// });
+
+const epicMix = [
+  "Time to Pretend",
+  "O-o-oh Child",
+  "Wish You Were Here",
+  "Heroes",
+  "I Put a Spell on You",
+  "Call Me",
+  "Paper Planes",
+  "Jolene",
+  "You Don't Own Me",
+  "Fast Car",
+  "Run the World (Girls)",
+  "Superstition",
 ];
 
-// Display your expenses in a list
-for (let exp of expenses) {
-  let li = document.createElement("li");
-  li.innerText = `$ ${exp}`;
-  expensesList.append(li);
-}
+const mixList = document.querySelector(".mix");
+const button = document.querySelector(".show-list");
+total = document.querySelector(".total");
 
-// Write showMinMax function here
-const showMinMax = function (expenses) {
-  let min = Math.min(...expenses);
-  let max = Math.max(...expenses);
-
-  let minListItem = document.createElement("li");
-  minListItem.innerText = `Min: $ ${min}`;
-
-  let maxListItem = document.createElement("li");
-  maxListItem.innerText = `Max: $ ${max}`;
-
-  results.append(minListItem, maxListItem);
-  results.classList.remove("hide");
-};
-
-// Write click event listener for 'button' and call the showMinMax function
 button.addEventListener("click", function () {
-  showMinMax(expenses);
-  button.disabled = true;
+  mixList.classList.remove("hide");
+  button.classList.add("hide");
+
+  mixInfo(epicMix);
+
+  total.innerText = `${epicMix.length} great songs!!`;
 });
+
+let mixInfo = function (mix) {
+  mix.forEach(function (song, index) {
+    let li = document.createElement("li");
+    li.classList.add("song");
+    li.innerHTML = `<span class="song-number">#${index + 1}</span> ${song}`;
+    mixList.append(li);
+  });
+};
