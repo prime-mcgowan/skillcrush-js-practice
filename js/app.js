@@ -799,3 +799,55 @@ let updatedList = stuff.filter(function (item) {
   return item.includes("s");
 });
 console.log(updatedList);
+
+// * Scope, Input, & Creating Elements ************************************************************
+//Globally Scoped Variable
+const numOfDrinks = 5;
+// ! if you try to reassign the variable with const...
+// numOfDrinks = 7;
+// console.log(numOfDrinks);
+// SyntaxError: /app.js: "numOfDrinks" is read-only
+
+//Function Scope =  tea = inside of a function and cannot be accessed outside of it
+let drinks = function () {
+  let tea = 6 + numOfDrinks;
+  console.log(tea);
+};
+
+// Block Scopt = soda = inside an if statement (or could be a loop)
+if (numOfDrinks === 5) {
+  var soda = "lemon-lime";
+  console.log(soda);
+}
+// lemon-lime
+
+//! if you try to access soda outside the block...
+console.log(soda);
+// ReferenceERROR: soda not defined
+
+// * GATHER INPUT & CREATE ELEMENTS ****************************************
+// add button
+const addShowButton = document.querySelector(".add");
+// label for the add button
+const showInput = document.querySelector(".add-show input");
+// unordered list (not yet visible)
+const showList = document.querySelector(".show-list");
+// span class for number of favorite shows
+const showCount = document.querySelector(".number");
+
+// value property will capture the value entered into the input box:
+addShowButton.addEventListener("click", function () {
+  const show = showInput.value;
+  // use the value to populate a list
+  if (show !== "") {
+    // next line creates the li in the html
+    let listItem = document.createElement("li");
+    // set the li to the value of the input (show the user inputted)
+    listItem.innerText = show;
+    // show will will be added to the list (points to the ul/li)
+    showList.append(listItem);
+    //  the length property reads the number of shows and displays the result
+    let shows = document.querySelectorAll(".show-list li");
+    showCount.innerText = shows.length;
+  }
+});
