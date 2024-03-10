@@ -1081,45 +1081,227 @@ paperclips += 2;
 console.log(paperclips);
 
 // * Properties and Dot Notation ****************************************
-const topicElement = document.querySelector(".topic");
-const countElement = document.querySelector(".count");
-const body = document.querySelector("body");
-const success = document.querySelector(".success");
-const dance = document.querySelector(".dance");
+// const topicElement = document.querySelector(".topic");
+// const countElement = document.querySelector(".count");
+// const body = document.querySelector("body");
+// const success = document.querySelector(".success");
+// const dance = document.querySelector(".dance");
 
-const learning = {
-  topic: "JS",
-  learningGoals: ["html", "css", "js", "react"],
-  category: "Front End Developement",
-  topicImportance: "high",
-  hoursThisWeek: 2,
-  weeklyHourGoal: 7,
-  achievedStudyGoal: false,
-  addStudyTime: function (hours) {
-    this.hoursThisWeek += hours;
-    if (this.hoursThisWeek >= this.weeklyHourGoal) {
-      this.achievedStudyGoal = true;
-      this.celebrate();
-    }
-  },
-  celebrate: function () {
-    body.classList.add("celebrate");
-    success.classList.remove("hide");
-    dance.classList.remove("hide");
-  },
+// const learning = {
+//   topic: "JS",
+//   learningGoals: ["html", "css", "js", "react"],
+//   category: "Front End Developement",
+//   topicImportance: "high",
+//   hoursThisWeek: 2,
+//   weeklyHourGoal: 7,
+//   achievedStudyGoal: false,
+//   addStudyTime: function (hours) {
+//     this.hoursThisWeek += hours;
+//     if (this.hoursThisWeek >= this.weeklyHourGoal) {
+//       this.achievedStudyGoal = true;
+//       this.celebrate();
+//     }
+//   },
+//   celebrate: function () {
+//     body.classList.add("celebrate");
+//     success.classList.remove("hide");
+//     dance.classList.remove("hide");
+//   },
+// };
+
+// console.log(learning);
+
+// learning.topic = "JavaScript";
+// // splice(index of element to be removed, quantity of elements to be removed)
+// learning.learningGoals.splice(1, 1);
+// console.log(learning);
+
+// topicElement.innerText = `I'm learning ${learning.topic}`;
+// topicElement.classList.remove("hide");
+
+// countElement.innerText = `I have ${learning.learningGoals.length} learning goals.`;
+// countElement.classList.remove("hide");
+
+// learning.addStudyTime(10);
+
+// * Practicing Objects and Methods ****************************************
+// const currentlyReading = {
+//   title: "The Fifth Season",
+//   author: "N.K. Jemisin",
+//   series: "Broken Earth Trilogy",
+//   pages: 512,
+//   publicationDate: "August 4th, 2015",
+//   currentChapter: 8,
+//   totalChapters: 23,
+// };
+
+// console.log(currentlyReading.title);
+// console.log(currentlyReading["pages"]);
+
+// currentlyReading.awards = "Hugo Awared for Best Novel (2016)";
+
+// console.log(currentlyReading);
+
+// currentlyReading.updateChapter = function (chapterNum) {
+//   this.currentChapter = chapterNum;
+// };
+
+// currentlyReading.updateChapter(11);
+
+// console.log(currentlyReading);
+
+// const bird = {
+//   name: "Eliza",
+//   type: "Budgie",
+//   hungerScale: 7, // Scale from 0 (full) to 10 (starving)
+//   isHappy: function () {
+//     if (this.hungerScale <= 3) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   },
+// };
+
+// bird.eat = function () {
+//   if (this.hungerScale === 0) {
+//     console.log(`${this.name} is full.`);
+//   } else {
+//     this.hungerScale -= 1;
+//     console.log("Nom nom nom");
+//   }
+// };
+
+// bird.eat();
+// console.log(bird.isHappy());
+
+// * Factory Function = create multiple objects ****************************************
+// const createIceCream = function (flavor, scoops, sprinkles) {
+//   const iceCream = {
+//     flavor: flavor,
+//     scoops: scoops,
+//     addSprinkles: sprinkles,
+//   };
+//   return iceCream;
+// };
+
+// const vanilla = createIceCream("vanilla", 2, true);
+// const strawberry = createIceCream("strawberry", 1, true);
+
+// console.log(vanilla, strawberry);
+
+// for (let key in vanilla) {
+//   console.log(key, vanilla[key]);
+// }
+
+// const createOutfit = function () {
+//   const outfit = {
+//     shirt: "green",
+//     pants: "blue",
+//     isNew: false,
+//     showOff: function () {
+//       this.isNew = true;
+//       console.log("Show-off your new outfit!!");
+//     },
+//   };
+//   return outfit;
+// };
+
+// console.log(createOutfit());
+
+// const tuesday = createOutfit();
+// tuesday.shirt = "white";
+// tuesday.pants = "black";
+
+// console.log(tuesday);
+
+// factory function with parameters
+const createOutfit = function (shirt, pants) {
+  const outfit = {
+    shirt: shirt,
+    pants: pants,
+    isNew: false,
+    showOff: function () {
+      console.log("Show-off your new outfit!!");
+    },
+  };
+  return outfit;
 };
 
-console.log(learning);
+// declare new objects
+const tuesday = createOutfit("white", "black");
+console.log(tuesday);
 
-learning.topic = "JavaScript";
-// splice(index of element to be removed, quantity of elements to be removed)
-learning.learningGoals.splice(1, 1);
-console.log(learning);
+const wednesday = createOutfit("pink", "gray");
+console.log(wednesday);
 
-topicElement.innerText = `I'm learning ${learning.topic}`;
-topicElement.classList.remove("hide");
+// for...in loop
 
-countElement.innerText = `I have ${learning.learningGoals.length} learning goals.`;
-countElement.classList.remove("hide");
+// just want the keys
+for (let key in tuesday) {
+  console.log(key);
+}
 
-learning.addStudyTime(10);
+// just want values ... the [] tell JS that's what you are looking for
+for (let key in tuesday) {
+  console.log(tuesday[key]);
+}
+
+// keys and values
+for (let key in tuesday) {
+  console.log(key, tuesday[key]);
+}
+
+// for...of to loop through multiple objects in an array
+const outfitArray = [tuesday, wednesday];
+
+for (let outfit of outfitArray) {
+  console.log(outfit);
+}
+
+// for...of and for...in loops to isolate the keys and values of multiple objects
+for (let outfit of outfitArray) {
+  for (let key in outfit) {
+    console.log(key, outfit[key]);
+  }
+}
+
+// factory function pattern with pets
+const statusButton = document.querySelector("button");
+const pets = document.querySelector(".all-pets");
+
+const createPet = function (name, species) {
+  const pet = {
+    name: name,
+    species: species,
+    isTired: 5,
+    sleep: function () {
+      console.log(`${this.name} needs a nap. Zzz...`);
+      this.isTired = 1;
+    },
+    play: function () {
+      if (this.isTired === 10) {
+        console.log("Too tired to play.");
+        this.sleep();
+      } else {
+        console.log(`Yay!! ${this.name} loves to play!!`);
+        this.isTired += 1;
+      }
+    },
+  };
+
+  return pet;
+};
+
+const sora = createPet("Sora", "ferret");
+const clover = createPet("Clover", "rabbit");
+const baxter = createPet("Baxter", "hamster");
+const cleo = createPet("Cleo", "rat");
+const francine = createPet("Francine", "turtle");
+
+console.log(sora, clover, baxter, cleo, francine);
+
+clover.sleep();
+baxter.play();
+
+console.log(clover, baxter);
