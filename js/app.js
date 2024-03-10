@@ -984,14 +984,14 @@ const mixList = document.querySelector(".mix");
 const button = document.querySelector(".show-list");
 total = document.querySelector(".total");
 
-button.addEventListener("click", function () {
-  mixList.classList.remove("hide");
-  button.classList.add("hide");
+// button.addEventListener("click", function () {
+//   mixList.classList.remove("hide");
+//   button.classList.add("hide");
 
-  mixInfo(epicMix);
+//   mixInfo(epicMix);
 
-  total.innerText = `${epicMix.length} great songs!!`;
-});
+//   total.innerText = `${epicMix.length} great songs!!`;
+// });
 
 let mixInfo = function (mix) {
   mix.forEach(function (song, index) {
@@ -1001,3 +1001,105 @@ let mixInfo = function (mix) {
     mixList.append(li);
   });
 };
+
+// * Intro to Objects ****************************************
+// object literal
+const house = {
+  size: 1500,
+  color: "blue",
+  windows: 20,
+};
+
+console.log(house.size);
+
+//key-value pairs = windows (key) and 20 (value)
+house.size = 1500;
+house.color = "blue";
+house.windows = 20;
+
+// change a properties value
+house.color = "green";
+
+// bracket notation to access & modify properties (used when looping)
+house["windows"] = 17;
+
+// method = when a function is the property of an object
+house.windowWash = function () {
+  if (this.window > 15) {
+    return `That's a lot of windows to wash`;
+  }
+};
+
+console.log(house.windowWash());
+
+// const cat = {};
+
+// cat.name = "Fred";
+// cat.nickname = "Flooficus";
+// cat.age = 5;
+// cat.isSleeping = true;
+// cat.favoriteToys = ["spring", "ping pong balls", "bird stuffy"];
+// cat.pet = function () {
+//   return "purrrrrrrrr";
+// };
+
+// console.log(cat);
+// console.log(cat.nickname);
+// console.log(cat.favoriteToys[2]);
+// console.log(cat["name"]);
+
+// object literal
+let cat = {
+  name: "Fred",
+  nickname: "Flooficus",
+  age: 5,
+  isSleeping: true,
+  favoriteToys: ["spring", "ping pong balls", "bird stuffy"],
+  pet: function () {
+    return "purrrrrrrr";
+  },
+};
+console.log(cat);
+
+cat.isSleeping = false;
+cat["color"] = "orange";
+
+console.log(cat);
+
+// the code below can also be placed in the cat object literal
+cat.play = function () {
+  this.isSleeping = false;
+  return `${this.nickname} is awake and playing!!`;
+};
+
+console.log(cat.play());
+
+// Operators = +, -, /, and %
+
+let paperclips = 10;
+paperclips += 2;
+console.log(paperclips);
+
+// * Properties and Dot Notation ****************************************
+const topicElement = document.querySelector(".topic");
+const countElement = document.querySelector(".count");
+
+const learning = {
+  topic: "JS",
+  learningGoals: ["html", "css", "js", "react"],
+  category: "Front End Developement",
+  topicImportance: "high",
+};
+
+console.log(learning);
+
+learning.topic = "JavaScript";
+// splice(index of element to be removed, quantity of elements to be removed)
+learning.learningGoals.splice(1, 1);
+console.log(learning);
+
+topicElement.innerText = `I'm learning ${learning.topic}`;
+topicElement.classList.remove("hide");
+
+countElement.innerText = `I have ${learning.learningGoals.length} learning goals.`;
+countElement.classList.remove("hide");
