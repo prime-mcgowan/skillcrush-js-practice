@@ -1379,3 +1379,17 @@ attentionButton.addEventListener("click", function () {
     repairList.append(li);
   }
 });
+
+// * Working with APIs ****************************************
+//the async allows for asynchronous communication between your program and the API
+const getData = async function () {
+  //the variable created will hold the response from the API
+  //the await keyword tells the program to wait on that line until the API data is received
+  const res = await fetch("https://api.quotable.io/quotes?author=maya-angelou");
+  //json turns the data into a proper JavaScript object that can be used in your code
+  //this is another asynch action so the await keyword is used again
+  const data = await res.json();
+  console.log(data);
+};
+
+getData();
