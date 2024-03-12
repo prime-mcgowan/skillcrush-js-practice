@@ -10,82 +10,68 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  font-family: "B612", sans-serif;
-  background-color: #fff;
-  color: #3b3b3b;
-  font-size: 16px;
+.hide {
+  display: none;
 }
 
-.container {
+body {
   display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
-  max-width: 500px;
-  text-align: left;
-  border: 1px solid #ccc;
-  margin-top: 4rem;
-  padding: 2rem;
-  background-color: lightgoldenrodyellow;
+  justify-content: center;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  background-color: #daeffb;
+}
+
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 h1 {
   width: 100%;
-  font-size: 2.25em;
   text-align: center;
-  font-family: "Archivo", sans-serif;
-  margin-bottom: 1em;
+  font-family: "Montserrat";
 }
 
-.fa-tools {
-  color: steelblue;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.fa-heart {
-  color: tomato;
+.imageButton {
+  margin: 1.5em auto;
+  padding: 20px;
+  border-radius: 40px;
+  background-color: royalblue;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-family: "Montserrat";
+  font-weight: bold;
 }
 
-button {
-  align-self: center;
-  width: 80%;
-  margin: 2em 0;
-  padding: 1em;
-  color: #292929;
-  font-size: 1.25em;
-}
-
-button:hover {
+.imageButton:hover {
+  margin: 1.5em auto;
+  padding: 20px;
+  border-radius: 40px;
+  background-color: rgb(44, 77, 179);
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-family: "Montserrat";
+  font-weight: bold;
   cursor: pointer;
 }
 
-button:active {
-  outline: none;
-  border: none;
-}
-
-.need-repair {
-  margin-top: 2em;
-  list-style: none;
-  width: 100%;
-  padding: 0;
-}
-
-.need-repair li {
-  padding: 0.5em 0;
-  font-size: 1.25em;
-  border-bottom: 1px solid #ccc;
-}
-
-.need-repair li span {
-  color: tomato;
-  font-weight: bold;
+figure {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* ==========================================================================
