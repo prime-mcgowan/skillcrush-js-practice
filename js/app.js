@@ -1216,119 +1216,166 @@ console.log(paperclips);
 // console.log(tuesday);
 
 // factory function with parameters
-const createOutfit = function (shirt, pants) {
-  const outfit = {
-    shirt: shirt,
-    pants: pants,
-    isNew: false,
-    showOff: function () {
-      console.log("Show-off your new outfit!!");
-    },
+// const createOutfit = function (shirt, pants) {
+//   const outfit = {
+//     shirt: shirt,
+//     pants: pants,
+//     isNew: false,
+//     showOff: function () {
+//       console.log("Show-off your new outfit!!");
+//     },
+//   };
+//   return outfit;
+// };
+
+// // declare new objects
+// const tuesday = createOutfit("white", "black");
+// console.log(tuesday);
+
+// const wednesday = createOutfit("pink", "gray");
+// console.log(wednesday);
+
+// // for...in loop
+
+// // just want the keys
+// for (let key in tuesday) {
+//   console.log(key);
+// }
+
+// // just want values ... the [] tell JS that's what you are looking for
+// for (let key in tuesday) {
+//   console.log(tuesday[key]);
+// }
+
+// // keys and values
+// for (let key in tuesday) {
+//   console.log(key, tuesday[key]);
+// }
+
+// // for...of to loop through multiple objects in an array
+// const outfitArray = [tuesday, wednesday];
+
+// for (let outfit of outfitArray) {
+//   console.log(outfit);
+// }
+
+// // for...of and for...in loops to isolate the keys and values of multiple objects
+// for (let outfit of outfitArray) {
+//   for (let key in outfit) {
+//     console.log(key, outfit[key]);
+//   }
+// }
+
+// // factory function pattern with pets
+// const statusButton = document.querySelector("button");
+// const pets = document.querySelector(".all-pets");
+
+// const createPet = function (name, species) {
+//   const pet = {
+//     name: name,
+//     species: species,
+//     isTired: 5,
+//     sleep: function () {
+//       console.log(`${this.name} needs a nap. Zzz...`);
+//       this.isTired = 1;
+//     },
+//     play: function () {
+//       if (this.isTired === 10) {
+//         console.log("Too tired to play.");
+//         this.sleep();
+//       } else {
+//         console.log(`Yay!! ${this.name} loves to play!!`);
+//         this.isTired += 1;
+//       }
+//     },
+//   };
+
+//   return pet;
+// };
+
+// const sora = createPet("Sora", "ferret");
+// const clover = createPet("Clover", "rabbit");
+// const baxter = createPet("Baxter", "hamster");
+// const cleo = createPet("Cleo", "rat");
+// const francine = createPet("Francine", "turtle");
+
+// // console.log(sora, clover, baxter, cleo, francine);
+
+// // clover.sleep();
+// // baxter.play();
+
+// // console.log(clover, baxter);
+
+// clover.isTired = 8;
+// francine.isTired = 9;
+
+// // console.log(sora, clover, baxter, cleo, francine);
+
+// // an array of pet objects as elements
+// const allPets = [sora, clover, baxter, cleo, francine];
+
+// // console.log(allPets);
+
+// const showPets = function (petArray) {
+//   pets.innerHTML = "";
+
+//   for (let pet of petArray) {
+//     //status is a variable
+//     let status = "Ready to play!!";
+//     //isTired is a property
+//     if (pet.isTired >= 7) {
+//       status = "sleeping";
+//     }
+//     const li = document.createElement("li");
+//     li.innerHTML = `<span class="pet-name"> ${pet.name}</span>, the ${pet.species}, is ${status}`;
+//     pets.append(li);
+//   }
+// };
+
+// statusButton.addEventListener("click", function () {
+//   showPets(allPets);
+// });
+
+// * Practice Exercies: Factory Functions ****************************************
+const createVehicle = function (type, numWheels, color) {
+  const vehicle = {
+    type: type,
+    numWheels: numWheels,
+    color: color,
   };
-  return outfit;
+  return vehicle;
 };
 
-// declare new objects
-const tuesday = createOutfit("white", "black");
-console.log(tuesday);
+const van = createVehicle("van", 4, "blue");
+const motorcycle = createVehicle("motorcylce", 2, "black");
+const bike = createVehicle("bike", 2, "yellow");
 
-const wednesday = createOutfit("pink", "gray");
-console.log(wednesday);
+for (let key in van) console.log(key); //keys
+for (let key in van) console.log(van[key]); //values
 
-// for...in loop
-
-// just want the keys
-for (let key in tuesday) {
-  console.log(key);
+const myVehicles = [van, motorcycle, bike];
+for (let vehicle of myVehicles) {
+  console.log(vehicle); // multiple objects in an array
 }
+console.log(myVehicles);
 
-// just want values ... the [] tell JS that's what you are looking for
-for (let key in tuesday) {
-  console.log(tuesday[key]);
-}
+const attentionButton = document.querySelector("button");
+const repairList = document.querySelector(".need-repair");
 
-// keys and values
-for (let key in tuesday) {
-  console.log(key, tuesday[key]);
-}
+//add a property called needsRepair to bike and van objects
+bike.needsRepair = true;
+van.needsRepair = true;
 
-// for...of to loop through multiple objects in an array
-const outfitArray = [tuesday, wednesday];
-
-for (let outfit of outfitArray) {
-  console.log(outfit);
-}
-
-// for...of and for...in loops to isolate the keys and values of multiple objects
-for (let outfit of outfitArray) {
-  for (let key in outfit) {
-    console.log(key, outfit[key]);
+attentionButton.addEventListener("click", function () {
+  //clears the list
+  repairList.innerHTML = "";
+  //grabs the repair list
+  const vehicleRepairList = myVehicles.filter(function (vehicle) {
+    return vehicle.needsRepair === true;
+  });
+  for (let vehicle of vehicleRepairList) {
+    let li = document.createElement("li");
+    li.innerHTML = `My ${vehicle.type} needs some love.`;
+    repairList.append(li);
   }
-}
-
-// factory function pattern with pets
-const statusButton = document.querySelector("button");
-const pets = document.querySelector(".all-pets");
-
-const createPet = function (name, species) {
-  const pet = {
-    name: name,
-    species: species,
-    isTired: 5,
-    sleep: function () {
-      console.log(`${this.name} needs a nap. Zzz...`);
-      this.isTired = 1;
-    },
-    play: function () {
-      if (this.isTired === 10) {
-        console.log("Too tired to play.");
-        this.sleep();
-      } else {
-        console.log(`Yay!! ${this.name} loves to play!!`);
-        this.isTired += 1;
-      }
-    },
-  };
-
-  return pet;
-};
-
-const sora = createPet("Sora", "ferret");
-const clover = createPet("Clover", "rabbit");
-const baxter = createPet("Baxter", "hamster");
-const cleo = createPet("Cleo", "rat");
-const francine = createPet("Francine", "turtle");
-
-// console.log(sora, clover, baxter, cleo, francine);
-
-// clover.sleep();
-// baxter.play();
-
-// console.log(clover, baxter);
-
-clover.isTired = 8;
-francine.isTired = 9;
-
-// console.log(sora, clover, baxter, cleo, francine);
-
-const allPets = [sora, clover, baxter, cleo, francine];
-
-// console.log(allPets);
-
-const showPets = function (petArray) {
-  pets.innerHTML = "";
-
-  for (let pet of petArray) {
-    let status = "Ready to play!!";
-    if (pet.isTired >= 7) {
-      status = "sleeping";
-    }
-    const li = document.createElement("li");
-    li.innerHTML = `<span class="pet-name"> ${pet.name}</span>, the ${pet.species}, is ${status}`;
-    pets.append(li);
-  }
-};
-
-statusButton.addEventListener("click", function () {
-  showPets(allPets);
 });
