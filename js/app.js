@@ -1363,22 +1363,22 @@ const attentionButton = document.querySelector("button");
 const repairList = document.querySelector(".need-repair");
 
 //add a property called needsRepair to bike and van objects
-bike.needsRepair = true;
-van.needsRepair = true;
+// bike.needsRepair = true;
+// van.needsRepair = true;
 
-attentionButton.addEventListener("click", function () {
-  //clears the list
-  repairList.innerHTML = "";
-  //grabs the repair list
-  const vehicleRepairList = myVehicles.filter(function (vehicle) {
-    return vehicle.needsRepair === true;
-  });
-  for (let vehicle of vehicleRepairList) {
-    let li = document.createElement("li");
-    li.innerHTML = `My ${vehicle.type} needs some love.`;
-    repairList.append(li);
-  }
-});
+// attentionButton.addEventListener("click", function () {
+//   //clears the list
+//   repairList.innerHTML = "";
+//   //grabs the repair list
+//   const vehicleRepairList = myVehicles.filter(function (vehicle) {
+//     return vehicle.needsRepair === true;
+//   });
+//   for (let vehicle of vehicleRepairList) {
+//     let li = document.createElement("li");
+//     li.innerHTML = `My ${vehicle.type} needs some love.`;
+//     repairList.append(li);
+//   }
+// });
 
 // * Working with APIs ****************************************
 //the async allows for asynchronous communication between your program and the API
@@ -1389,7 +1389,7 @@ const getData = async function () {
   //json turns the data into a proper JavaScript object that can be used in your code
   //this is another asynch action so the await keyword is used again
   const data = await res.json();
-  console.log(data);
+  //   console.log(data);
 };
 
 getData();
@@ -1403,7 +1403,30 @@ const getImage = async function () {
   const res = await fetch(" https://picsum.photos/v2/list?limit=100");
 
   const images = await res.json();
-  console.log(images);
+  //   console.log(images);
+
+  selectRandomImage(images);
 };
 
-getImage();
+const selectRandomImage = function (images) {
+  let randomIndex = Math.floor(Math.random() * images.length);
+  //   console.log(randomIndex);
+  // use randomIndex to grab a single image from your images array
+  let randomImage = images[randomIndex];
+  //   console.log(randomImage);
+
+  displayImage(randomImage);
+};
+
+const displayImage = function (randomImage) {
+  const author = randomImage.author;
+  const imageAddress = randomImage.download_url;
+
+  authorSpan.innerText = author;
+  img.src = imageAddress;
+  imgDiv.classList.remove("hide");
+};
+
+imageButton.addEventListener("click", function () {
+  getImage();
+});
