@@ -1357,7 +1357,7 @@ const myVehicles = [van, motorcycle, bike];
 for (let vehicle of myVehicles) {
   console.log(vehicle); // multiple objects in an array
 }
-console.log(myVehicles);
+// console.log(myVehicles);
 
 const attentionButton = document.querySelector("button");
 const repairList = document.querySelector(".need-repair");
@@ -1427,6 +1427,46 @@ const displayImage = function (randomImage) {
   imgDiv.classList.remove("hide");
 };
 
-imageButton.addEventListener("click", function () {
-  getImage();
+// imageButton.addEventListener("click", function () {
+//   getImage();
+// });
+
+// * Practice Exercies: Intro to  APIs ****************************************
+// * Random User Generator *******************************************************
+const randomFolks = document.querySelector(".random-peeps");
+const selectUserNumber = document.querySelector("#users");
+
+const fetchData = async function (numUsers) {
+  const usersRequest = await fetch(
+    `https://randomuser.me/api?results=${numUsers}`
+  );
+  const userData = await usersRequest.json();
+
+  //property name for the array of objecgts = results
+  //"map" to the property
+  const userResults = userData.results;
+  displayUsers(userResults);
+};
+
+fetchData(4);
+
+const displayUsers = function (userResults) {
+  randomFolks.innerHTML = "";
+
+  //loop over userResults...for every user select their: name, country and avatar url w/ size of medium
+  //save the results of these three properties to three variables called: country, name adn imageUrl
+  for (let user of userResults) {
+    let country = user.location.country;
+    let name = user.name.first;
+    let imageUrl = user.picture.medium;
+    let userDiv = document.createElement("div");
+    userDiv.innerHTML = `<h3>${name}</h3> <p>${country}</p> <img src=${imageUrl} alt="User avatar" />`;
+
+    randomFolks.append(userDiv);
+  }
+};
+
+selectUserNumber.addEventListener("change", function (e) {
+  const numUsers = e.target.value;
+  fetchData(numUsers);
 });
