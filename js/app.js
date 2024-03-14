@@ -1433,40 +1433,65 @@ const displayImage = function (randomImage) {
 
 // * Practice Exercies: Intro to  APIs ****************************************
 // * Random User Generator *******************************************************
-const randomFolks = document.querySelector(".random-peeps");
-const selectUserNumber = document.querySelector("#users");
+// const randomFolks = document.querySelector(".random-peeps");
+// const selectUserNumber = document.querySelector("#users");
 
-const fetchData = async function (numUsers) {
-  const usersRequest = await fetch(
-    `https://randomuser.me/api?results=${numUsers}`
+// const fetchData = async function (numUsers) {
+//   const usersRequest = await fetch(
+//     `https://randomuser.me/api?results=${numUsers}`
+//   );
+//   const userData = await usersRequest.json();
+
+//   //property name for the array of objecgts = results
+//   //"map" to the property
+//   const userResults = userData.results;
+//   displayUsers(userResults);
+// };
+
+// fetchData(4);
+
+// const displayUsers = function (userResults) {
+//   randomFolks.innerHTML = "";
+
+//   //loop over userResults...for every user select their: name, country and avatar url w/ size of medium
+//   //save the results of these three properties to three variables called: country, name adn imageUrl
+//   for (let user of userResults) {
+//     let country = user.location.country;
+//     let name = user.name.first;
+//     let imageUrl = user.picture.medium;
+//     let userDiv = document.createElement("div");
+//     userDiv.innerHTML = `<h3>${name}</h3> <p>${country}</p> <img src=${imageUrl} alt="User avatar" />`;
+
+//     randomFolks.append(userDiv);
+//   }
+// };
+
+// selectUserNumber.addEventListener("change", function (e) {
+//   const numUsers = e.target.value;
+//   fetchData(numUsers);
+// });
+
+// * Kindergarten List ****************************************************
+const notRegistered = document.querySelector(".not-registered");
+
+const getRegistrationData = async function () {
+  const request = await fetch(
+    "https://gist.githubusercontent.com/skillcrush-curriculum/4bfa96d3762f86d2327d389063b3ea8d/raw/86e50e48e98c662ead6d9bd191ef7db381e9f4b4/fieldtrip.json"
   );
-  const userData = await usersRequest.json();
 
-  //property name for the array of objecgts = results
-  //"map" to the property
-  const userResults = userData.results;
-  displayUsers(userResults);
+  const data = await request.json();
+  //   console.log(data);
+  displayContactList(data);
 };
 
-fetchData(4);
-
-const displayUsers = function (userResults) {
-  randomFolks.innerHTML = "";
-
-  //loop over userResults...for every user select their: name, country and avatar url w/ size of medium
-  //save the results of these three properties to three variables called: country, name adn imageUrl
-  for (let user of userResults) {
-    let country = user.location.country;
-    let name = user.name.first;
-    let imageUrl = user.picture.medium;
-    let userDiv = document.createElement("div");
-    userDiv.innerHTML = `<h3>${name}</h3> <p>${country}</p> <img src=${imageUrl} alt="User avatar" />`;
-
-    randomFolks.append(userDiv);
+const displayContactList = function (data) {
+  for (let student of data) {
+    if (student.registered === "no") {
+      let li = document.createElement("li");
+      li.innerHTML = student.name;
+      notRegistered.append(li);
+    }
   }
 };
 
-selectUserNumber.addEventListener("change", function (e) {
-  const numUsers = e.target.value;
-  fetchData(numUsers);
-});
+getRegistrationData();
